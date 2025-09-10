@@ -1,0 +1,117 @@
+.container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color:  #6b3f96;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.heading::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.project-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.project-box {
+  background: linear-gradient(135deg, #ffffff, #e6f0ff);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 300px;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  animation: fadeUp 0.8s ease-in-out both;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.project-box * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-box.active {
+  transform: scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.edu-icon {
+  font-size: 1rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fillProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-box {
+    width: 90%;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+}

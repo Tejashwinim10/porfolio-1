@@ -1,0 +1,6 @@
+.project-box p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;       
+  margin-top: 8px;
+}
